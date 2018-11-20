@@ -105,6 +105,8 @@ const menu = document.getElementById('menu');
 menu.addEventListener("click", (event) => {
     const channel = event.target.dataset.channel;
     if (channel) {
-        updateSourceChannel(channel, articlesList);
+        updateSourceChannel(channel, articlesList).catch((error) => {
+            console.log(JSON.stringify(error));
+        });
     }
 });
