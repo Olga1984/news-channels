@@ -77,37 +77,28 @@ class NewsArticlesList {
         this.data = data;
     };
 }
-const SOURCE_API = {
-    fetch(channel) {
-        const url = `${BASE_URL}${channel}&sortBy=top${APIKEY}`;
 
-        return fetch(url)
-            .then((response) => response.json())
-            .catch((error) => {
-                console.log(JSON.stringify(error));
-            })
-    }
+const updateSourceChannel = async (channel, newsArticlesList) => {
+    const response = await fetch(`${BASE_URL}${channel}&sortBy=top${APIKEY}`);
+    const data = await response.json();
+    document.getElementsByClassName('heading')[0].innerHTML = `News: ${channel}`;
+    newsArticlesList.update(data);
+    newsArticlesList.render();
 };
 
-const updateSourceChannel = (channel, newsArticlesList) => {
-    SOURCE_API.fetch(channel)
-        .then((data) => {
-            document.getElementsByClassName('heading')[0].innerHTML = `News: ${channel}`;
-            newsArticlesList.update(data);
-            newsArticlesList.render();
-        });
-};
 //aside menu generation
 const newsWrapper = document.getElementById('menu-wrapper');
 const newsMenu = new NewsMenu(newsWrapper, SOURCE_CHANNELS);
 newsMenu.render();
-
 newsMenu.addNavBurgerListener();
 
 // first content generation
 const newsListContainer = document.getElementById('news-list');
 const articlesList = new NewsArticlesList(newsListContainer);
-updateSourceChannel(SOURCE_CHANNELS[0], articlesList);
+updateSourceChannel(SOURCE_CHANNELS[0], articlesList)
+    .catch((error) => {
+                console.log(JSON.stringify(error));
+            });
 
 //nav panel listener
 const menu = document.getElementById('menu');
