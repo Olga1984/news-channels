@@ -18,7 +18,7 @@ export class NewsArticlesList {
                         </figure>
                         <p class="description">${articleData.description}</p>
                         <span class="news-date">${this.publicationDate(articleData.publishedAt)}</span>
-                    <div>
+                    </div>
                 </li>`;
     }
     createArticlesBlock() {

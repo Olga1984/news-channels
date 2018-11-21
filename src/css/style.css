@@ -209,6 +209,7 @@ body {
 }
 
 .news-item {
+    height: 400px;
     margin-bottom: 30px;
     background-color: #f3f3f3;
     text-align: center;
@@ -270,31 +271,75 @@ body {
 }
 
 /* On screens that are 320px or less  */
-@media screen and (max-width: 320px) {}
+@media screen and (min-width: 320px) {
+    .news-item {
+        height: 520px;
+    }}
 
 /* On screens that are 600px or less  */
 @media screen and (max-width: 600px) {
     .overlayMenu ul li a {
         padding: 10px;
     }
-
     .news-image {
         width: 100%;
         height: auto;
     }
-
     .description {
         width: 100%;
     }
 }
+@media screen and (min-width: 600px) {
 
-/* On screens that are 992px or less */
+    .news-item {
+        height: 300px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .news-item {
+        height: 370px;
+    }
+}
+
 @media screen and (max-width: 992px) {
     .navBurger {
         width: 2.5%;
     }
-
     .title {
         height: 40px;
+    }
+}
+@media screen and (min-width: 992px) {
+
+    .news-item {
+        height: 300px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .navBurger {
+        width: 2.5%;
+    }
+    .title {
+        height: 40px;
+    }
+}
+@media screen and (min-width: 1200px) {
+
+    .news-item {
+        height: 370px;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .navBurger {
+        width: 2.5%;
+    }
+    .title {
+        height: 40px;
+    }
+}
+@media screen and (min-width: 1400px) {
+
+    .news-item {
+        height: 400px;
     }
 }
