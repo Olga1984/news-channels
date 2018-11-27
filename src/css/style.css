@@ -181,6 +181,16 @@ body {
 
 .wrapper {
 }
+.show-news-btn {
+    display: block;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    margin: 0 auto;
+}
+.hide {
+    display: none;
+}
 
 .heading {
     text-align: center;
@@ -202,14 +212,11 @@ body {
 }
 
 .news-list {
-    display: flex;
-    flex-direction: column;
     max-width: 100%;
     list-style-type: none;
 }
 
 .news-item {
-    height: 400px;
     margin-bottom: 30px;
     background-color: #f3f3f3;
     text-align: center;
@@ -270,12 +277,6 @@ body {
     font-weight: bold;
 }
 
-/* On screens that are 320px or less  */
-@media screen and (min-width: 320px) {
-    .news-item {
-        height: 520px;
-    }}
-
 /* On screens that are 600px or less  */
 @media screen and (max-width: 600px) {
     .overlayMenu ul li a {
@@ -289,17 +290,6 @@ body {
         width: 100%;
     }
 }
-@media screen and (min-width: 600px) {
-
-    .news-item {
-        height: 300px;
-    }
-}
-@media screen and (min-width: 768px) {
-    .news-item {
-        height: 370px;
-    }
-}
 
 @media screen and (max-width: 992px) {
     .navBurger {
@@ -309,12 +299,7 @@ body {
         height: 40px;
     }
 }
-@media screen and (min-width: 992px) {
 
-    .news-item {
-        height: 300px;
-    }
-}
 @media screen and (max-width: 1200px) {
     .navBurger {
         width: 2.5%;
@@ -323,23 +308,12 @@ body {
         height: 40px;
     }
 }
-@media screen and (min-width: 1200px) {
 
-    .news-item {
-        height: 370px;
-    }
-}
 @media screen and (max-width: 1400px) {
     .navBurger {
         width: 2.5%;
     }
     .title {
         height: 40px;
-    }
-}
-@media screen and (min-width: 1400px) {
-
-    .news-item {
-        height: 400px;
     }
 }
