@@ -1,11 +1,16 @@
 import {SOURCE_CHANNELS} from './constants';
 import {NewsMenu} from './newsMenu';
 import {NewsArticlesList} from './newsArticlesList';
-import {updateSourceChannel} from './updateSourceChannel';
-import '../css/style.scss';
+import {UpdateSourceChannel} from './updateSourceChannel';
+import {DisplayListOfUniqueKeys} from './displayListOfKeys';
+import '../css/newsList.scss';
 
 export function init() {
-    console.log('12345hihi12345');
+
+    // check work of custom-loader
+    const jsonData = require('../list.json');
+    DisplayListOfUniqueKeys(jsonData);
+
     //aside menu generation
     const newsWrapper = document.getElementById('menu-wrapper');
     const newsMenu = new NewsMenu(newsWrapper, SOURCE_CHANNELS);
@@ -15,7 +20,7 @@ export function init() {
 // first content generation
     const newsListContainer = document.getElementById('news-list');
     const articlesList = new NewsArticlesList(newsListContainer);
-    updateSourceChannel(SOURCE_CHANNELS[0], articlesList)
+    UpdateSourceChannel(SOURCE_CHANNELS[0], articlesList)
         .catch((error) => {
             console.log(JSON.stringify(error));
         });
@@ -24,7 +29,7 @@ export function init() {
     menu.addEventListener("click", (event) => {
         const channel = event.target.dataset.channel;
         if (channel) {
-            updateSourceChannel(channel, articlesList).catch((error) => {
+            UpdateSourceChannel(channel, articlesList).catch((error) => {
                 console.log(JSON.stringify(error));
             });
         }

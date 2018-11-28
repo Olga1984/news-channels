@@ -1,12 +1,11 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    devtool: 'source-map',
     entry: ['whatwg-fetch', '@babel/polyfill', './src/js/index.js'],
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: "bundle.js",
-        publicPath: "/build/"
+        filename: "[name].js",
     },
     resolveLoader: {
         modules: ['node_modules', path.resolve(__dirname, 'loaders')]
@@ -33,7 +32,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$|\.json/,
+                test: /\.json/,
                 exclude: /node_modules/,
                 use: [{
                     loader: 'custom-loader'
@@ -41,5 +40,9 @@ module.exports = {
                 ]
             },
         ]
-    }
+    },
+    plugins: [new HtmlWebpackPlugin({
+        title: 'News',
+        template: './src/index.ejs'
+    })]
 };
