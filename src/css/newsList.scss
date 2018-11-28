@@ -1,51 +1,58 @@
-      .news-list {
-        max-width: 100%;
-        list-style-type: none;
+.news-list {
+  max-width: 100%;
+  list-style-type: none;
 
-        .news-item {
-          margin-bottom: 30px;
-          background-color: #f3f3f3;
-          text-align: center;
+  .news-item {
+    margin-bottom: 30px;
+    background-color: #f3f3f3;
+    text-align: center;
 
-          .title {
-            overflow: hidden;
-            width: 100%;
-            color: #e1e6e9;
-            text-shadow: 0 1px 0 rgba(23, 31, 35, 0.5);
-            border-radius: 3px;
+    .title {
+      overflow: hidden;
+      width: 100%;
+      color: #e1e6e9;
+      text-shadow: 0 1px 0 rgba(23, 31, 35, 0.5);
+      border-radius: 3px;
+      height: 40px;
 
-            &:hover {
-              background: #dadada;
-            }
-          }
-          .article-item-content {
-            display: block;
-
-            .news-image {
-              width: 40%;
-              height: auto;
-              float: left;
-
-              .image {
-                display: block;
-                width: 90%;
-                margin: 5%;
-              }
-              .description {
-                float: left;
-                width: 60%;
-                font-weight: 500;
-                padding: 20px 0;
-                transition-duration: 0.5s;
-              }
-              .news-date {
-                display: inline-block;
-                width: 100%;
-                padding: 10px;
-                text-align: right;
-              }
-            }
-          }
-        }
+      &:hover {
+        background: #dadada;
       }
 
+      .news-link {
+        color: cornflowerblue;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+    .article-item-content {
+      display: block;
+      overflow: hidden;
+
+      .news-image {
+        width: 40%;
+        height: auto;
+        float: left;
+
+        .image {
+          display: block;
+          width: 90%;
+          margin: 5%;
+        }
+      }
+      .description {
+        float: left;
+        width: 60%;
+        font-weight: 500;
+        padding: 20px 0;
+        transition-duration: 0.5s;
+      }
+      .news-date {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        text-align: right;
+      }
+    }
+  }
+}

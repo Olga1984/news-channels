@@ -1,3 +1,5 @@
+import '../css/main.scss';
+
 const ready = () => {
     const button = document.getElementById("show-news-btn");
     button.onclick = () => {
