@@ -1,4 +1,4 @@
-import '../css/newsMenu.scss';
+import '../scss/newsMenu.scss';
 export class NewsMenu {
     constructor(newsWrapper, sources) {
         this.newsWrapper = newsWrapper;

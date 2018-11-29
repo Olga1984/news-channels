@@ -3,12 +3,12 @@ import {NewsMenu} from './newsMenu';
 import {NewsArticlesList} from './newsArticlesList';
 import {UpdateSourceChannel} from './updateSourceChannel';
 import {DisplayListOfUniqueKeys} from './displayListOfKeys';
-import '../css/newsList.scss';
+import '../scss/newsList.scss';
+import jsonData from '../list.json';
 
 export function init() {
 
     // check work of custom-loader
-    const jsonData = require('../list.json');
     DisplayListOfUniqueKeys(jsonData);
 
     //aside menu generation

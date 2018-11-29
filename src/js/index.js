@@ -1,4 +1,4 @@
-import '../css/main.scss';
+import '../scss/main.scss';
 
 const ready = () => {
     const button = document.getElementById("show-news-btn");

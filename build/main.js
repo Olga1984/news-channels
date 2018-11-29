@@ -3301,14 +3301,14 @@ eval("__webpack_require__(/*! ../modules/web.timers */ \"./node_modules/core-js/
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/css/main.scss":
-/*!**********************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/css/main.scss ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/scss/main.scss":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/scss/main.scss ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"* {\\n  margin: 0;\\n  padding: 0;\\n  box-sizing: border-box; }\\n  * html,\\n  * body {\\n    margin: 0;\\n    background: #eee; }\\n    * html .content-wrapper,\\n    * body .content-wrapper {\\n      display: flex;\\n      flex-direction: column; }\\n      * html .content-wrapper .content,\\n      * body .content-wrapper .content {\\n        min-height: calc(100vh - 40px); }\\n        * html .content-wrapper .content .show-news-btn,\\n        * body .content-wrapper .content .show-news-btn {\\n          display: block;\\n          width: 100px;\\n          height: 40px;\\n          text-align: center;\\n          margin: 0 auto; }\\n          * html .content-wrapper .content .show-news-btn.hide,\\n          * body .content-wrapper .content .show-news-btn.hide {\\n            display: none; }\\n        * html .content-wrapper .content .heading,\\n        * body .content-wrapper .content .heading {\\n          text-align: center;\\n          text-transform: uppercase;\\n          padding: 10px; }\\n      * html .content-wrapper.nav-space,\\n      * body .content-wrapper.nav-space {\\n        margin-left: 35%; }\\n    * html .footer,\\n    * body .footer {\\n      height: 40px;\\n      background-color: #6495ed;\\n      text-align: center; }\\n      * html .footer .footer-link,\\n      * body .footer .footer-link {\\n        color: black;\\n        text-decoration: none;\\n        font-weight: bold; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/css/main.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"* {\\n  margin: 0;\\n  padding: 0;\\n  box-sizing: border-box; }\\n  * html,\\n  * body {\\n    margin: 0;\\n    background: #eee; }\\n    * html .content-wrapper,\\n    * body .content-wrapper {\\n      display: flex;\\n      flex-direction: column; }\\n      * html .content-wrapper .content,\\n      * body .content-wrapper .content {\\n        min-height: calc(100vh - 40px); }\\n        * html .content-wrapper .content .show-news-btn,\\n        * body .content-wrapper .content .show-news-btn {\\n          display: block;\\n          width: 100px;\\n          height: 40px;\\n          text-align: center;\\n          margin: 0 auto; }\\n          * html .content-wrapper .content .show-news-btn.hide,\\n          * body .content-wrapper .content .show-news-btn.hide {\\n            display: none; }\\n        * html .content-wrapper .content .heading,\\n        * body .content-wrapper .content .heading {\\n          text-align: center;\\n          text-transform: uppercase;\\n          padding: 10px; }\\n      * html .content-wrapper.nav-space,\\n      * body .content-wrapper.nav-space {\\n        margin-left: 35%; }\\n    * html .footer,\\n    * body .footer {\\n      height: 40px;\\n      background-color: #6495ed;\\n      text-align: center; }\\n      * html .footer .footer-link,\\n      * body .footer .footer-link {\\n        color: black;\\n        text-decoration: none;\\n        font-weight: bold; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/scss/main.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 
@@ -3379,17 +3379,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./src/css/main.scss":
-/*!***************************!*\
-  !*** ./src/css/main.scss ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./main.scss */ \"./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/css/main.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/css/main.scss?");
-
-/***/ }),
-
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -3398,7 +3387,18 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!../
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/main.scss */ \"./src/css/main.scss\");\n/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar ready = function ready() {\n  var button = document.getElementById(\"show-news-btn\");\n\n  button.onclick = function () {\n    __webpack_require__.e(/*! import() | news */ \"news\").then(__webpack_require__.bind(null, /*! ./newsList */ \"./src/js/newsList.js\")).then(function (news) {\n      news.init();\n    });\n    button.classList.add('hide');\n  };\n};\n\ndocument.addEventListener(\"DOMContentLoaded\", ready);\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar ready = function ready() {\n  var button = document.getElementById(\"show-news-btn\");\n\n  button.onclick = function () {\n    __webpack_require__.e(/*! import() | news */ \"news\").then(__webpack_require__.bind(null, /*! ./newsList */ \"./src/js/newsList.js\")).then(function (news) {\n      news.init();\n    });\n    button.classList.add('hide');\n  };\n};\n\ndocument.addEventListener(\"DOMContentLoaded\", ready);\n\n//# sourceURL=webpack:///./src/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/scss/main.scss":
+/*!****************************!*\
+  !*** ./src/scss/main.scss ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./main.scss */ \"./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/scss/main.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/scss/main.scss?");
 
 /***/ }),
 

@@ -32,11 +32,12 @@ module.exports = {
                 ]
             },
             {
-                test: /\.json/,
+                test: /\.json$/,
                 exclude: /node_modules/,
                 use: [{
                     loader: 'custom-loader'
-                }
+                },
+
                 ]
             },
         ]
