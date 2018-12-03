@@ -1,4 +1,8 @@
 module.exports = function(source) {
-    console.log('list of unique keys');
-    return source.replace(/[0-9]+/gi, "allReplacedKeysAsUnique");
+    const procesedSource = JSON.parse(source),
+        keysToDelete = source.match(/[0-9]+/gi);
+        keysToDelete.forEach(function(item){
+        delete procesedSource.cars[item];
+    });
+    return JSON.stringify(procesedSource);
 };

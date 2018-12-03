@@ -34,18 +34,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./src/js/displayListOfKeys.js":
-/*!*************************************!*\
-  !*** ./src/js/displayListOfKeys.js ***!
-  \*************************************/
-/*! exports provided: DisplayListOfUniqueKeys */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"DisplayListOfUniqueKeys\", function() { return DisplayListOfUniqueKeys; });\nvar DisplayListOfUniqueKeys = function DisplayListOfUniqueKeys(listOfKeys) {\n  var keys = [];\n\n  for (var i = 0; i < listOfKeys.list.people.length; i++) {\n    Object.keys(listOfKeys.list.people[i]).forEach(function (key) {\n      if (keys.indexOf(key) === -1) {\n        keys.push(key);\n      }\n    });\n  }\n\n  console.log(keys);\n};\n\n//# sourceURL=webpack:///./src/js/displayListOfKeys.js?");
-
-/***/ }),
-
 /***/ "./src/js/newsArticlesList.js":
 /*!************************************!*\
   !*** ./src/js/newsArticlesList.js ***!
@@ -66,7 +54,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"init\", function() { return init; });\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ \"./src/js/constants.js\");\n/* harmony import */ var _newsMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newsMenu */ \"./src/js/newsMenu.js\");\n/* harmony import */ var _newsArticlesList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newsArticlesList */ \"./src/js/newsArticlesList.js\");\n/* harmony import */ var _updateSourceChannel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./updateSourceChannel */ \"./src/js/updateSourceChannel.js\");\n/* harmony import */ var _displayListOfKeys__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./displayListOfKeys */ \"./src/js/displayListOfKeys.js\");\n/* harmony import */ var _scss_newsList_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../scss/newsList.scss */ \"./src/scss/newsList.scss\");\n/* harmony import */ var _scss_newsList_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_scss_newsList_scss__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _list_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../list.json */ \"./src/list.json\");\nvar _list_json__WEBPACK_IMPORTED_MODULE_6___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../list.json */ \"./src/list.json\", 1);\n\n\n\n\n\n\n\nfunction init() {\n  // check work of custom-loader\n  Object(_displayListOfKeys__WEBPACK_IMPORTED_MODULE_4__[\"DisplayListOfUniqueKeys\"])(_list_json__WEBPACK_IMPORTED_MODULE_6__); //aside menu generation\n\n  var newsWrapper = document.getElementById('menu-wrapper');\n  var newsMenu = new _newsMenu__WEBPACK_IMPORTED_MODULE_1__[\"NewsMenu\"](newsWrapper, _constants__WEBPACK_IMPORTED_MODULE_0__[\"SOURCE_CHANNELS\"]);\n  newsMenu.render();\n  newsMenu.addNavBurgerListener(); // first content generation\n\n  var newsListContainer = document.getElementById('news-list');\n  var articlesList = new _newsArticlesList__WEBPACK_IMPORTED_MODULE_2__[\"NewsArticlesList\"](newsListContainer);\n  Object(_updateSourceChannel__WEBPACK_IMPORTED_MODULE_3__[\"UpdateSourceChannel\"])(_constants__WEBPACK_IMPORTED_MODULE_0__[\"SOURCE_CHANNELS\"][0], articlesList).catch(function (error) {\n    console.log(JSON.stringify(error));\n  }); //nav panel listener\n\n  var menu = document.getElementById('menu');\n  menu.addEventListener(\"click\", function (event) {\n    var channel = event.target.dataset.channel;\n\n    if (channel) {\n      Object(_updateSourceChannel__WEBPACK_IMPORTED_MODULE_3__[\"UpdateSourceChannel\"])(channel, articlesList).catch(function (error) {\n        console.log(JSON.stringify(error));\n      });\n    }\n  });\n}\n\n//# sourceURL=webpack:///./src/js/newsList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"init\", function() { return init; });\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ \"./src/js/constants.js\");\n/* harmony import */ var _newsMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newsMenu */ \"./src/js/newsMenu.js\");\n/* harmony import */ var _newsArticlesList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newsArticlesList */ \"./src/js/newsArticlesList.js\");\n/* harmony import */ var _updateSourceChannel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./updateSourceChannel */ \"./src/js/updateSourceChannel.js\");\n/* harmony import */ var _scss_newsList_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../scss/newsList.scss */ \"./src/scss/newsList.scss\");\n/* harmony import */ var _scss_newsList_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scss_newsList_scss__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _list_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../list.json */ \"./src/list.json\");\nvar _list_json__WEBPACK_IMPORTED_MODULE_5___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../list.json */ \"./src/list.json\", 1);\n\n\n\n\n\n\nfunction init() {\n  // check work of custom-loader\n  console.log(_list_json__WEBPACK_IMPORTED_MODULE_5__.cars); //aside menu generation\n\n  var newsWrapper = document.getElementById('menu-wrapper');\n  var newsMenu = new _newsMenu__WEBPACK_IMPORTED_MODULE_1__[\"NewsMenu\"](newsWrapper, _constants__WEBPACK_IMPORTED_MODULE_0__[\"SOURCE_CHANNELS\"]);\n  newsMenu.render();\n  newsMenu.addNavBurgerListener(); // first content generation\n\n  var newsListContainer = document.getElementById('news-list');\n  var articlesList = new _newsArticlesList__WEBPACK_IMPORTED_MODULE_2__[\"NewsArticlesList\"](newsListContainer);\n  Object(_updateSourceChannel__WEBPACK_IMPORTED_MODULE_3__[\"UpdateSourceChannel\"])(_constants__WEBPACK_IMPORTED_MODULE_0__[\"SOURCE_CHANNELS\"][0], articlesList).catch(function (error) {\n    console.log(JSON.stringify(error));\n  }); //nav panel listener\n\n  var menu = document.getElementById('menu');\n  menu.addEventListener(\"click\", function (event) {\n    var channel = event.target.dataset.channel;\n\n    if (channel) {\n      Object(_updateSourceChannel__WEBPACK_IMPORTED_MODULE_3__[\"UpdateSourceChannel\"])(channel, articlesList).catch(function (error) {\n        console.log(JSON.stringify(error));\n      });\n    }\n  });\n}\n\n//# sourceURL=webpack:///./src/js/newsList.js?");
 
 /***/ }),
 
@@ -98,10 +86,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!***********************!*\
   !*** ./src/list.json ***!
   \***********************/
-/*! exports provided: list, default */
+/*! exports provided: name, age, cars, default */
 /***/ (function(module) {
 
-eval("module.exports = {\"list\":{\"people\":[{\"name\":[\"Alex\"],\"age\":[\"allReplacedKeysAsUnique\"],\"gender\":[\"Male\"],\"allReplacedKeysAsUnique\":[\"Mal\"],\"greeting\":[\"hello\"]},{\"name\":[\"anna\"],\"age\":[\"allReplacedKeysAsUnique\"],\"allReplacedKeysAsUnique\":[\"Female\"]},{\"nicename\":[\"Alex\"],\"age\":[\"allReplacedKeysAsUnique\"],\"gender\":[\"Male\"],\"allReplacedKeysAsUnique\":[\"Ma\"],\"greeting\":[\"hi\"]}]}};\n\n//# sourceURL=webpack:///./src/list.json?");
+eval("module.exports = {\"name\":\"John\",\"age\":30,\"cars\":{\"car1\":\"Ford\",\"car3\":\"Fiat\",\"car4\":\"Fiat\"}};\n\n//# sourceURL=webpack:///./src/list.json?");
 
 /***/ }),
 

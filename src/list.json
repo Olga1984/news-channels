@@ -1,8 +1,18 @@
-{"list":
-{"people":[
-  {"name":["Alex"],"age":["18"],"gender":["Male"],"999":["Mal"],"greeting":["hello"]},
-  {"name":["anna"],"age":["22"],"1020":["Female"]},
-  {"nicename":["Alex"],"age":["28"],"gender":["Male"],"100000":["Ma"],"greeting":["hi"]}
-]}
+{
+  "name":"John",
+  "age":30,
+  "cars": {
+    "car1":"Ford",
+    "898":"BMW",
+    "car3":"Fiat",
+    "898":"BMW",
+    "812098":"BMW",
+    "89258":"BMW",
+    "7898":"BMW",
+    "89778":"BMW",
+    "77898":"BMW",
+    "78485":"BMW",
+    "car4":"Fiat"
+  }
 }
 

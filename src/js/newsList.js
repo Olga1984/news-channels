@@ -2,14 +2,13 @@ import {SOURCE_CHANNELS} from './constants';
 import {NewsMenu} from './newsMenu';
 import {NewsArticlesList} from './newsArticlesList';
 import {UpdateSourceChannel} from './updateSourceChannel';
-import {DisplayListOfUniqueKeys} from './displayListOfKeys';
 import '../scss/newsList.scss';
 import jsonData from '../list.json';
 
 export function init() {
 
     // check work of custom-loader
-    DisplayListOfUniqueKeys(jsonData);
+    console.log(jsonData.cars);
 
     //aside menu generation
     const newsWrapper = document.getElementById('menu-wrapper');
