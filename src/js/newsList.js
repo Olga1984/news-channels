@@ -20,16 +20,25 @@ export function init() {
     const newsListContainer = document.getElementById('news-list');
     const articlesList = new NewsArticlesList(newsListContainer);
     UpdateSourceChannel(SOURCE_CHANNELS[0], articlesList)
-        .catch((error) => {
-            console.log(JSON.stringify(error));
-        });
+        .catch(err => {
+           import(/* webpackChunkName: "error" */ "./errorSingleton").then(error => {
+                error.promiseError(new Error('Error UpdateSourceChannel'))})
+
+    }).catch((errorSingleton) => {
+        alert(errorSingleton.error);
+    });
+;
 //nav panel listener
     const menu = document.getElementById('menu');
     menu.addEventListener("click", (event) => {
         const channel = event.target.dataset.channel;
         if (channel) {
-            UpdateSourceChannel(channel, articlesList).catch((error) => {
-                console.log(JSON.stringify(error));
+            UpdateSourceChannel(channel, articlesList).catch(err => {
+               import(/* webpackChunkName: "error" */ "./errorSingleton").then(error => {
+                    error.promiseError(new Error('Error UpdateSourceChannel'))})
+
+            }).catch((errorSingleton) => {
+                alert(errorSingleton.error);
             });
         }
     });

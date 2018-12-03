@@ -1,5 +1,5 @@
 import '../scss/main.scss';
-
+import '../js/patterns';
 const ready = () => {
     const button = document.getElementById("show-news-btn");
     button.onclick = () => {
@@ -7,6 +7,7 @@ const ready = () => {
             news.init()
         });
         button.classList.add('hide');
+
     };
 };
 document.addEventListener("DOMContentLoaded", ready);
