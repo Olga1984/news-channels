@@ -1,6 +1,6 @@
 // Creational Pattern
 // Factory
-import {APIKEY, BASE_URL, SOURCE_CHANNELS} from "./constants";
+import {APIKEY, BASE_URL} from "./constants";
 
 class Factory {
     create(channel) {
