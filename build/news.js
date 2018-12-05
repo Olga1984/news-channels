@@ -22,18 +22,6 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-
 
 /***/ }),
 
-/***/ "./src/js/errorSingleton.js":
-/*!**********************************!*\
-  !*** ./src/js/errorSingleton.js ***!
-  \**********************************/
-/*! exports provided: ErrorSingleton */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ErrorSingleton\", function() { return ErrorSingleton; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar ErrorSingleton =\n/*#__PURE__*/\nfunction () {\n  function ErrorSingleton(err) {\n    _classCallCheck(this, ErrorSingleton);\n\n    this.error = err;\n\n    if (!ErrorSingleton.instance) {\n      ErrorSingleton.instance = this;\n    }\n\n    return ErrorSingleton.instance;\n  }\n\n  _createClass(ErrorSingleton, [{\n    key: \"showError\",\n    value: function showError() {\n      alert(this.error);\n    }\n  }]);\n\n  return ErrorSingleton;\n}();\n;\n\n//# sourceURL=webpack:///./src/js/errorSingleton.js?");
-
-/***/ }),
-
 /***/ "./src/js/newsArticlesList.js":
 /*!************************************!*\
   !*** ./src/js/newsArticlesList.js ***!
@@ -78,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UpdateSourceChannel\", function() { return UpdateSourceChannel; });\n/* harmony import */ var _errorSingleton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./errorSingleton */ \"./src/js/errorSingleton.js\");\n/* harmony import */ var _factory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./factory */ \"./src/js/factory.js\");\n\n\nvar UpdateSourceChannel = function UpdateSourceChannel(channel, newsArticlesList) {\n  var newsSource = new _factory__WEBPACK_IMPORTED_MODULE_1__[\"NewsSource\"]();\n  var response = newsSource.create(channel, 'GET');\n  response.fetch().then(function (data) {\n    document.getElementsByClassName('heading')[0].innerHTML = \"News: \".concat(channel);\n    newsArticlesList.update(data);\n    newsArticlesList.render();\n  }).catch(function (err) {\n    var instance = new _errorSingleton__WEBPACK_IMPORTED_MODULE_0__[\"ErrorSingleton\"](err);\n    instance.showError();\n  }); // async\n  // const response = await fetch(`${BASE_URL}${channel}&sortBy=top${APIKEY}`);\n  // const data = await response.json();\n  // document.getElementsByClassName('heading')[0].innerHTML = `News: ${channel}`;\n  //newsArticlesList.update(data);\n  // newsArticlesList.render();\n};\n\n//# sourceURL=webpack:///./src/js/updateSourceChannel.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UpdateSourceChannel\", function() { return UpdateSourceChannel; });\n/* harmony import */ var _factory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./factory */ \"./src/js/factory.js\");\n\nvar UpdateSourceChannel = function UpdateSourceChannel(channel, newsArticlesList) {\n  var newsSource = new _factory__WEBPACK_IMPORTED_MODULE_0__[\"NewsSource\"]();\n  var response = newsSource.create(channel, 'GET');\n  response.fetch().then(function (data) {\n    document.getElementsByClassName('heading')[0].innerHTML = \"News: \".concat(channel);\n    newsArticlesList.update(data);\n    newsArticlesList.render();\n  }).catch(function (err) {\n    __webpack_require__.e(/*! import() | error */ \"error\").then(__webpack_require__.bind(null, /*! ./errorSingleton */ \"./src/js/errorSingleton.js\")).then(function (_ref) {\n      var ErrorSingleton = _ref.ErrorSingleton;\n      var instance = new ErrorSingleton();\n      instance.showError(err);\n    });\n  });\n};\n\n//# sourceURL=webpack:///./src/js/updateSourceChannel.js?");
 
 /***/ }),
 
