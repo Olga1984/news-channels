@@ -1,6 +1,6 @@
 // Creational Pattern
 // Factory
-import {APIKEY, BASE_URL} from "./constants";
+import {APIKEY, BASE_URL, SOURCE_CHANNELS} from "./constants";
 
 class Factory {
     create(channel) {
@@ -18,10 +18,11 @@ class Request {
     }
 }
 
-const factory = new Factory();
-const cnnChannel = factory.create('mtv-news');
-const guardianChannel = factory.create('bbc-news');
-console.log('first mtv-news and bbc-news requests make factory pattern');
+// const factory = new Factory();
+// const cnnChannel = factory.create('mtv-news');
+// const guardianChannel = factory.create('bbc-news');
+// console.log('first mtv-news and bbc-news requests make factory pattern');
+
 
 // structural
 // decorator
@@ -84,9 +85,9 @@ class Star {
     };
 
 const star = new Star();
-const fan1 = new Fan(()=>console.log('WOW mountin'));
+const fan1 = new Fan(()=>console.log('WOW mountain'));
 const fan2 = new Fan(()=>console.log('WOW!'));
 star.addFan(fan1);
 star.addFan(fan2);
-star.sendFoto('I am on the mountin');
+star.sendFoto('I am on the mountain');
 console.log(star);

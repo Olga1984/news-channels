@@ -1,5 +1,5 @@
 import '../scss/main.scss';
-import '../js/patterns';
+import '../js/factory';
 const ready = () => {
     const button = document.getElementById("show-news-btn");
     button.onclick = () => {

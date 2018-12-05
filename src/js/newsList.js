@@ -2,6 +2,7 @@ import {SOURCE_CHANNELS} from './constants';
 import {NewsMenu} from './newsMenu';
 import {NewsArticlesList} from './newsArticlesList';
 import {UpdateSourceChannel} from './updateSourceChannel';
+import {ErrorSingleton} from './errorSingleton';
 import '../scss/newsList.scss';
 import jsonData from '../list.json';
 
@@ -21,24 +22,17 @@ export function init() {
     const articlesList = new NewsArticlesList(newsListContainer);
     UpdateSourceChannel(SOURCE_CHANNELS[0], articlesList)
         .catch(err => {
-           import(/* webpackChunkName: "error" */ "./errorSingleton").then(error => {
-                error.promiseError(new Error('Error UpdateSourceChannel'))})
-
-    }).catch((errorSingleton) => {
-        alert(errorSingleton.error);
+            const instance = new ErrorSingleton(err);
+            instance.showError();
     });
-;
 //nav panel listener
     const menu = document.getElementById('menu');
     menu.addEventListener("click", (event) => {
         const channel = event.target.dataset.channel;
         if (channel) {
             UpdateSourceChannel(channel, articlesList).catch(err => {
-               import(/* webpackChunkName: "error" */ "./errorSingleton").then(error => {
-                    error.promiseError(new Error('Error UpdateSourceChannel'))})
-
-            }).catch((errorSingleton) => {
-                alert(errorSingleton.error);
+                const instance = new ErrorSingleton(err);
+                instance.showError();
             });
         }
     });

@@ -1,16 +1,12 @@
-export function promiseError(err) {
-    return () => Promise.reject(ErrorSingleton.instance(err))
-}
- const ErrorSingleton = (function () {
-    function ErrorSingleton(err) {
+export class ErrorSingleton {
+    constructor(err) {
         this.error = err;
-    }
-
-    ErrorSingleton.instance = function (err) {
-        if (this.singleton == null) {
-            this.singleton = new ErrorSingleton(err);
+        if(!ErrorSingleton.instance){
+            ErrorSingleton.instance = this;
         }
-        return this.singleton;
-    };
-    return ErrorSingleton;
-}());
+        return ErrorSingleton.instance;
+    }
+    showError() {
+        alert(this.error);
+    }
+};
